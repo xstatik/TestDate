@@ -23,7 +23,11 @@ using namespace std;
     * @version 04
     * @date 29/06/2018 Wade Davidson, added m_month setters and getters and tested.
     *
-    * @todo Everything
+    * @author Wade Davidson
+    * @version 05
+    * @date 29/06/2018 Wade Davidson, added m_year setters and getters and tested.
+    *
+    * @todo Not sure yet.....
     */
 
 class Date
@@ -63,6 +67,18 @@ class Date
             * @return unsigned int
             **/
         unsigned GetMonth() const;
+            /**
+            * @brief Sets m_year to y
+            * @param unsigned int
+            * @return void
+            * @post m_year is set to y
+            **/
+        void SetYear(unsigned y);
+            /**
+            * @brief Returns m_year
+            * @return unsigned int
+            **/
+        unsigned GetYear() const;
 
     private:
         unsigned m_day;
