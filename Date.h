@@ -19,6 +19,10 @@ using namespace std;
     * @version 03
     * @date 29/06/2018 Wade Davidson, added m_day setters and getters and tested.
     *
+    * @author Wade Davidson
+    * @version 04
+    * @date 29/06/2018 Wade Davidson, added m_month setters and getters and tested.
+    *
     * @todo Everything
     */
 
@@ -32,11 +36,11 @@ class Date
             /**
             * @brief Clears or initialises this class
             * @return void
-            * @post m_day and m_year set to 1, m_year set to 1900
+            * @post m_day and m_month set to 1, m_year set to 1900
             **/
         void Clear();
             /**
-            * @brief This will set m_day to d
+            * @brief Sets m_day to d
             * @param unsigned int
             * @return void
             * @post m_day is set to d
@@ -47,6 +51,18 @@ class Date
             * @return unsigned int
             **/
         unsigned GetDay() const;
+            /**
+            * @brief Sets m_month to m
+            * @param unsigned int
+            * @return void
+            * @post m_month is set to m
+            **/
+        void SetMonth(unsigned m);
+            /**
+            * @brief Returns m_month
+            * @return unsigned int
+            **/
+        unsigned GetMonth() const;
 
     private:
         unsigned m_day;

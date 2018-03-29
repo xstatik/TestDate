@@ -16,8 +16,13 @@ int main()
     cout << endl << testDate.GetDay() << endl;
 
     cout << endl << "****************END OF TEST 02 && 03***************" << endl;
+//--------------------------------------------------------------
+        //TEST 04 && 05
+//--------------------------------------------------------------
+    testDate.SetMonth(12);
+    cout << endl << testDate.GetMonth() << endl;
 
-
+    cout << endl << "****************END OF TEST 04 && 05***************" << endl;
 
     return 0;
 }
