@@ -1,9 +1,11 @@
-// Unit.H - Unit class definition
+// Date.H - Date class definition
 // Author - Wade Davidson
 // Using TortoiseSVN for version mangement.
 
 #ifndef DATE_H
 #define DATE_H
+
+#include <string>
 
 using namespace std;
 
@@ -27,6 +29,10 @@ using namespace std;
     * @version 05
     * @date 29/06/2018 Wade Davidson, added m_year setters and getters and tested.
     *
+    * @author Wade Davidson
+    * @version 06
+    * @date 04/04/2018 Wade Davidson, added function to return month as string
+    *
     * @todo Not sure yet.....
     */
 
@@ -36,7 +42,7 @@ class Date
             /**
             * @brief Default constructor
             **/
-        Date() {Clear();}
+        Date();
             /**
             * @brief Clears or initialises this class
             * @return void
@@ -79,6 +85,11 @@ class Date
             * @return unsigned int
             **/
         unsigned GetYear() const;
+            /**
+            * @brief Returns the month name as a string
+            * @return string
+            **/
+        string GetMonthName() const;
 
     private:
         unsigned m_day;
