@@ -33,6 +33,10 @@ using namespace std;
     * @version 06
     * @date 04/04/2018 Wade Davidson, added function to return month as string
     *
+    * @author Wade Davidson
+    * @version 07
+    * @date 04/04/2018 Wade Davidson, added function to return the entire date as a string
+    *
     * @todo Not sure yet.....
     */
 
@@ -90,6 +94,11 @@ class Date
             * @return string
             **/
         string GetMonthName() const;
+            /**
+            * @brief Returns the entire date as a string
+            * @return string
+            **/
+        string GetWholeDate() const;
 
     private:
         unsigned m_day;

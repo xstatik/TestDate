@@ -1,5 +1,9 @@
-#include <iostream>
+//Program to test Date class
+
 #include "Date.h"
+#include <iostream>
+#include <string>
+
 
 using namespace std;
 
@@ -42,7 +46,17 @@ int main()
         testDate.SetMonth(i);
         cout << testDate.GetMonth() << " - " << testDate.GetMonthName() << endl;
     }
-    cout << endl << "****************END OF TEST 04 && 05***************" << endl;
+    cout << endl << "****************END OF TEST 05***************" << endl;
+//--------------------------------------------------------------
+        //TEST 05
+//--------------------------------------------------------------
+    for(int i = 1; i <= 12; i++)
+    {
+        testDate.SetMonth(i);
+        cout << testDate.GetMonth() << " - " << testDate.GetWholeDate() << endl;
+    }
+    cout << endl << "****************END OF TEST 06***************" << endl;
+
 
     return 0;
 }

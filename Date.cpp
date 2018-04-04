@@ -44,6 +44,20 @@ unsigned Date::GetYear() const
     return m_year;
 }
 
+string Date::GetWholeDate() const
+{
+    string tempString;
+
+    tempString = to_string(m_day);
+    tempString += " ";
+    tempString += GetMonthName();
+    tempString += " ";
+    tempString += (to_string(m_year));
+
+    return (tempString);
+}
+
+
 string Date::GetMonthName() const
 {
     switch(m_month)
