@@ -37,6 +37,10 @@ using namespace std;
     * @version 07
     * @date 04/04/2018 Wade Davidson, added function to return the entire date as a string
     *
+    * @author Wade Davidson
+    * @version 08
+    * @date 17/04/2018 Wade Davidson, added DatUtils.h. changed SetDay function to add preconditions
+    *
     * @todo Not sure yet.....
     */
 
@@ -59,7 +63,7 @@ class Date
             * @return void
             * @post m_day is set to d
             **/
-        void SetDay(unsigned d);
+        bool SetDay(const unsigned d);
             /**
             * @brief Returns m_day
             * @return unsigned int

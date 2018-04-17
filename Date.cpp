@@ -14,9 +14,15 @@ void Date::Clear()
     m_year = 1900;
 }
 
-void Date::SetDay(unsigned d)
+bool Date::SetDay(const unsigned d)
 {
-    m_day = d;
+    if(d > 0 && d < 32)
+    {
+        m_day = d;
+        return true;
+    }
+
+    return false;
 }
 
 unsigned Date::GetDay() const

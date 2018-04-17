@@ -1,6 +1,7 @@
 //Program to test Date class
 
 #include "Date.h"
+#include "DateUtils.h"
 #include <iostream>
 #include <string>
 
@@ -10,22 +11,32 @@ using namespace std;
 int main()
 {
 //--------------------------------------------------------------
-        //TEST 01
+        //TEST 01 - Test default constructor
 //--------------------------------------------------------------
     Date testDate;
 
-    cout << testDate.GetDay() << "/" << testDate.GetMonth() << "/" << testDate.GetYear() << endl;
+    printDate(testDate);
 
     cout << endl << "****************END OF TEST 01***************" << endl;
 //--------------------------------------------------------------
-        //TEST 02
+        //TEST 02 - Test SetDay and preconditions
 //--------------------------------------------------------------
     testDate.SetDay(3);
-    cout << endl << testDate.GetDay() << endl;
+
+    if(!testDate.SetDay(0) && !testDate.SetDay(32))
+    {
+        cout << "Out of range!!!" << endl;
+    }
+
+    testDate.SetDay(1);
+    printDate(testDate);
+
+    testDate.SetDay(31);
+    printDate(testDate);
 
     cout << endl << "****************END OF TEST 02***************" << endl;
 //--------------------------------------------------------------
-        //TEST 03
+        //TEST 03 - Test SetMonth and precondtions
 //--------------------------------------------------------------
     testDate.SetMonth(12);
     cout << endl << testDate.GetMonth() << endl;
