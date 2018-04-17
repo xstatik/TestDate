@@ -41,6 +41,10 @@ using namespace std;
     * @version 08
     * @date 17/04/2018 Wade Davidson, added DatUtils.h. changed SetDay function to add preconditions
     *
+    * @author Wade Davidson
+    * @version 09
+    * @date 17/04/2018 Wade Davidson, added SetDate to check for valid dates. Only able to set it through this!
+    *
     * @todo Not sure yet.....
     */
 
@@ -54,60 +58,68 @@ class Date
             /**
             * @brief Clears or initialises this class
             * @return void
-            * @post m_day and m_month set to 1, m_year set to 1900
+            * @post Date object is cleared
             **/
         void Clear();
             /**
-            * @brief Sets m_day to d
-            * @param unsigned int
-            * @return void
-            * @post m_day is set to d
-            **/
-        bool SetDay(const unsigned d);
-            /**
-            * @brief Returns m_day
+            * @brief Returns the day
             * @return unsigned int
             **/
         unsigned GetDay() const;
             /**
-            * @brief Sets m_month to m
-            * @param unsigned int
-            * @return void
-            * @post m_month is set to m
-            **/
-        void SetMonth(unsigned m);
-            /**
-            * @brief Returns m_month
+            * @brief Returns the month
             * @return unsigned int
             **/
         unsigned GetMonth() const;
             /**
-            * @brief Sets m_year to y
-            * @param unsigned int
-            * @return void
-            * @post m_year is set to y
-            **/
-        void SetYear(unsigned y);
-            /**
-            * @brief Returns m_year
+            * @brief Returns the year
             * @return unsigned int
             **/
         unsigned GetYear() const;
             /**
-            * @brief Returns the month name as a string
-            * @return string
-            **/
-        string GetMonthName() const;
-            /**
-            * @brief Returns the entire date as a string
-            * @return string
-            **/
-        string GetWholeDate() const;
+            * @brief  Sets and checks the date
+            *
+            * Check for valid date including leap years and returns true if successful.
+            * Date object must be set this way!!!
+            *
+            * @param  m_day for the day
+            * @param  m_month for the month
+            * @param  m_year for the year
+            *
+            * @return bool
+            * @pre Must be a valid date
+            * @post will set the date
+            */
+        bool SetDate(unsigned d, unsigned m, unsigned y);
 
     private:
+            ///Stores the day
         unsigned m_day;
+            ///Stores the month
         unsigned m_month;
+            ///Stores the year
         unsigned m_year;
+            /**
+            * @brief Used to set the day
+            * @param unsigned int
+            * @return void
+            * @post The day is set
+            **/
+        bool SetDay(const unsigned d);
+            /**
+            * @brief Used to set the month
+            * @param unsigned int
+            * @return void
+            * @post The month is set
+            **/
+        bool SetMonth(const unsigned m);
+            /**
+            * @brief Used to set the year
+            * @param unsigned int
+            * @return void
+            * @post The year is set
+            **/
+        bool SetYear(const unsigned y);
 };
 
 #endif // DATE_H

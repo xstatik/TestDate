@@ -16,13 +16,42 @@ void Date::Clear()
 
 bool Date::SetDay(const unsigned d)
 {
-    if(d > 0 && d < 32)
+    if(d < 1 || d > 31)
     {
-        m_day = d;
-        return true;
+        return false;
     }
 
-    return false;
+    if(m_month == 02)
+    {
+        if(d == 29 && m_year % 4 == 0)//Check for leap year
+        {
+            m_day = d;
+            return true;
+        }
+
+        if(d <= 28)
+        {
+            m_day = d;
+            return true;
+        }
+
+        return false;
+    }
+
+    if(m_month == 4 || m_month == 6 || m_month == 9 || m_month == 11)
+    {
+        if(d < 31)
+        {
+            m_day = d;
+            return true;
+        }
+
+        return false;
+    }
+
+    m_day = d;
+
+    return true;
 }
 
 unsigned Date::GetDay() const
@@ -30,9 +59,18 @@ unsigned Date::GetDay() const
     return m_day;
 }
 
-void Date::SetMonth(unsigned m)
+bool Date::SetMonth(const unsigned m)
 {
-    m_month = m;
+    if(m < 13 && m > 0)
+    {
+        m_month = m;
+
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 unsigned Date::GetMonth() const
@@ -40,9 +78,18 @@ unsigned Date::GetMonth() const
     return m_month;
 }
 
-void Date::SetYear(unsigned y)
+bool Date::SetYear(const unsigned y)
 {
-    m_year = y;
+    if(y < 9999 && y > 0)
+    {
+        m_year = y;
+
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 unsigned Date::GetYear() const
@@ -50,61 +97,15 @@ unsigned Date::GetYear() const
     return m_year;
 }
 
-string Date::GetWholeDate() const
+bool Date::SetDate(unsigned d, unsigned m, unsigned y)
 {
-    string tempString;
-
-    tempString = to_string(m_day);
-    tempString += " ";
-    tempString += GetMonthName();
-    tempString += " ";
-    tempString += (to_string(m_year));
-
-    return (tempString);
-}
-
-
-string Date::GetMonthName() const
-{
-    switch(m_month)
+    if(SetYear(y) && SetMonth(m) && SetDay(d))
     {
-        case 1:
-            return "January";
-            break;
-        case 2:
-            return "February";
-            break;
-        case 3:
-            return "March";
-            break;
-        case 4:
-            return "April";
-            break;
-        case 5:
-            return "May";
-            break;
-        case 6:
-            return "June";
-            break;
-        case 7:
-            return "July";
-            break;
-        case 8:
-            return "August";
-            break;
-        case 9:
-            return "September";
-            break;
-        case 10:
-            return "October";
-            break;
-        case 11:
-            return "November";
-            break;
-        case 12:
-            return "December";
-            break;
-        default:
-            return "Not Found";
+        return true;
     }
+    else
+    {
+        return false;
+    }
+
 }
