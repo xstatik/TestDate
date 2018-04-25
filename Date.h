@@ -1,13 +1,9 @@
 // Date.H - Date class definition
 // Author - Wade Davidson
-// Using TortoiseSVN for version mangement.
+// Using Git for version mangement.
 
 #ifndef DATE_H
 #define DATE_H
-
-#include <string>
-
-using namespace std;
 
     /**
     * @class Date
@@ -56,7 +52,7 @@ class Date
             **/
         Date();
             /**
-            * @brief Clears or initialises this class
+            * @brief Clears varirables
             * @return void
             * @post Date object is cleared
             **/
@@ -109,14 +105,14 @@ class Date
             /**
             * @brief Used to set the month
             * @param unsigned int
-            * @return void
+            * @return bool true if set
             * @post The month is set
             **/
         bool SetMonth(const unsigned m);
             /**
             * @brief Used to set the year
             * @param unsigned int
-            * @return void
+            * @return bool true if set
             * @post The year is set
             **/
         bool SetYear(const unsigned y);

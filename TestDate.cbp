@@ -34,6 +34,7 @@
 		</Compiler>
 		<Unit filename="Date.cpp" />
 		<Unit filename="Date.h" />
+		<Unit filename="DateUtils.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

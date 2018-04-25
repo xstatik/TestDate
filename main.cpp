@@ -1,31 +1,28 @@
 //Program to test Date class
-
 #include "Date.h"
 #include "DateUtils.h"
 #include <iostream>
 #include <string>
 
-
 using namespace std;
 
-void Test01();
-void Test02();
-void Test03();
-void Test04();
-void Test05();
-void Test06();
-void Test07();
-
+void Test01();//Test Default constructor
+void Test02();//Test SetYear
+void Test03();//Test SetMonth
+void Test04();//Test SetDay February leap year
+void Test05();//Test SetDay February non leap year
+void Test06();//Test SetDay Non 31 day months
+void Test07();//Test SetDay 31 day months
 
 int main()
 {
-    Test01();
-    Test02();
-    Test03();
-    Test04();
-    Test05();
-    Test06();
-    Test07();
+    Test01();//Test Default constructor
+    Test02();//Test SetYear
+    Test03();//Test SetMonth
+    Test04();//Test SetDay February leap year
+    Test05();//Test SetDay February non leap year
+    Test06();//Test SetDay Non 31 day months
+    Test07();//Test SetDay 31 day months
 
     return 0;
 }

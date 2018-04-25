@@ -1,10 +1,9 @@
 #include "Date.h"
 
-using namespace std;
-
 Date::Date()
+    :m_day(1), m_month(1), m_year(1900)
 {
-    Clear();
+
 }
 
 void Date::Clear()
